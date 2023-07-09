@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <meta http-equiv="refresh" content="4"/>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'book/style.css' %}">
+  <link rel="stylesheet" href="{% static 'book/style_items.css' %}">
+</head>
+<body>
+  <div id="header">
+        <!-- <div class="name">Shyamsar tudu</div> -->
+        <div class="name"><a href="{%static '/book/login.html'%}">login</a></div>
+        <div class="user-details"><u>BooKBabe</u></div>
+        <div class="access">
+            <div class="notifications"><a href="">Notifications</a></div>
+            <div class="cart"><a href="">Cart</a></div>
+        </div>
+    </div>
+
+  <div id="search-box">
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Enter your search query" />
+      <input type="submit" value="Search" />
+    </form>
+  </div>
+  <!-- this section is used for the items -->
+    <div class="slider-container"></div>
+        <div class="slider">
+            <div class="slide">
+                <div class="product-box">
+                    <img src="{% static '/images/index.png' %}" alt="Product Image">
+                    <h3 class="product-title">Product Name</h3>
+                    <p class="product-description">machine learning</p>
+                    <p class="product-price">599.00</p>
+                    <button class="product-button">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="arrow arrow-left">&larr;</button>
+    <button class="arrow arrow-right">&rarr;</button>
+  <script>
+    // searchbox
+    // document.getElementById('search-form').addEventListener('submit', function(event) {
+    //   event.preventDefault();
+    //   var query = document.getElementById('search-input').value;
+    //   // Perform search or other actions with the query
+    //   console.log('Search query:', query);
+    // });
+
+
+    // arrow
+
+    const slider = document.querySelector('.slider');
+    const slideWidth = document.querySelector('.slide').offsetWidth;
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+
+    let currentPosition = 0;
+
+    arrowLeft.addEventListener('click', () => {
+        currentPosition += slideWidth;
+        if (currentPosition > 0) {
+            currentPosition = -(slideWidth * (slider.childElementCount - 1));
+            }
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        });
+
+        arrowRight.addEventListener('click', () => {
+            currentPosition -= slideWidth;
+            if (currentPosition < -(slideWidth * (slider.childElementCount - 1))) {
+                currentPosition = 0;
+            }
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <style>
+            *{
+                background-color: rgb(209, 217, 224);
+            }
+            form{
+                border: 1px solid transparent;
+                text-align: center;
+                padding: 30px;
+            }
+            form input{
+                padding: 10px;
+            } 
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form method="post" action="{% url 'login' %}">
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" name="email" required placeholder="enter your email">
+                <br><br/>
+                <!-- <label for="pass">password:</label> -->
+                <input type="password" name="pass" required placeholder="enter your password">
+                <br><br/>
+                <input type="submit" value="Create">
+        </form>
+    </body>
+</html>

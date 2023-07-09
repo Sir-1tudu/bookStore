@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+    </head>
+    <body>
+        <h1>Create Person</h1>
+        <form method="post" action="{% url 'create_user' %}">
+            <label for="name">name:</label>
+            <input type="name" name="name" required>
+            <br>
+            <label for="email">email:</label>
+            <input type="email" name="email" required>
+            <br>
+            <label for="password">password:</label>
+            <input type="password" name="pass" required>
+            <br>
+            <label for="pass">conform password:</label>
+            <input type="password" name="pass-conf" required>
+            <br>
+            <input type="submit" value="Create">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<!-- add_data.html -->
+<form method="POST" action="{% url 'say_hello' %}">
+    {% csrf_token %}
+    <label for="name">Field 1:</label>
+    <input type="text" name="name id="name" required>
+  
+    <label for="email">Field 2:</label>
+    <input type="email" name="email" id="email" required>
+  
+    <button type="submit">Submit</button>
+  </form>
+  
