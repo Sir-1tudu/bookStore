@@ -10,6 +10,6 @@ class Users(models.Model):
 
 
 class Product(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+    id_product = models.ForeignKey(Users, on_delete=models.CASCADE)
+    product_name = models.CharField(max_length=200)
+    description = models.CharField(default=0)
