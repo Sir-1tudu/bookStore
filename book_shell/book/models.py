@@ -3,18 +3,13 @@ from django.db import models
 # Create your models here. 
 # DataBase is here.
 
+
 class Users(models.Model):
-    # user_id = models.BigAutoField()
-    name = models.CharField(max_length=25)
-    email = models.EmailField()
-    # Cart = models.TextField()
-    # password = models.IntegerField()
-    # confPassword = models.IntegerField()
-    # usr_image = models.FileField()
+    user_name = models.CharField(max_length=200)
+    email = models.EmailField("date published")
+
 
 class Product(models.Model):
-    product_id = models.IntegerField(models.ForeignKey(Users, on_delete=models.CASCADE))
-    Product_name = models.CharField(max_length=100)
-    product_price = models.FloatField()
-    product_image = models.ImageField()
-
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
