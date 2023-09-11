@@ -12,4 +12,4 @@ class Users(models.Model):
 class Product(models.Model):
     id_product = models.ForeignKey(Users, on_delete=models.CASCADE)
     product_name = models.CharField(max_length=200)
-    description = models.CharField(default='i am here through')
+    description = models.CharField(default='i am here through',max_length=200)
